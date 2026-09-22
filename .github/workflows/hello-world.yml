@@ -1,0 +1,15 @@
+name: Print Hello World
+
+on:
+  schedule:
+    # Runs everyday at 09:10, 09:11, and 09:12 UTC (14:40, 14:41, 14:42 IST)
+    - cron: '10,11,12 9 * * *'
+  workflow_dispatch: # This adds a manual "Run workflow" button for easy testing
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Message
+        run: echo "hello working"
